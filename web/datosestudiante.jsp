@@ -6,6 +6,7 @@
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/Estilosparatabla.css" rel="stylesheet" type="text/css"/>
+       
         <title>Datos Estudiante</title>
          <h1><i>Datos Estudiante</i></h1> 
         <%!
@@ -25,7 +26,7 @@
         %>
     </head>
     <body>
-         <% 
+          <% 
         //ecepcion
         try {
         ConectaBd bd = new ConectaBd() ; 
@@ -130,8 +131,9 @@
      <%
             }
         %>    
-       
-       
+        <br>
+        <br>
+        
         <table border="2"   align="center" class="azulino" style="margin: auto; display: table">
             <thead>
                 <tr>
@@ -250,7 +252,16 @@
             
         }
         %>
-        </tbody>
-      </table>
+        <tr align="center">
+                <td colspan="8"><a href="menu.jsp"> <input type="submit" value="Menú" /> </a>
+                       </td>
+                </tr>
+            
+            </tbody>
+      
+        </table>
     </body>
+    
+    
+    
 </html>

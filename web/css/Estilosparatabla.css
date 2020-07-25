@@ -61,7 +61,7 @@ table.ecologico tbody tr:hover {
 table.azulino {
     border-collapse: collapse;
 }
-table.ecologico td, table.azulino  th {
+table.azulino td, table.azulino  th {
     border: 1px solid #000000;
     padding: 6px 12px;
 }
@@ -78,5 +78,5 @@ table.azulino  tr:nth-of-type(even){
     background-color: #FFFFFF;
 }
 table.azulino  tbody tr:hover {
-    background-color: #FFFF00;
+    background-color: #99D9EA;
 }
