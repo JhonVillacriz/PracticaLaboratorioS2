@@ -20,7 +20,7 @@
               
                 
                <tr align="center">
-                <td><a href="Login.jsp"> <input type="submit" value="salir" /> </a>
+                <td><a href="salida.jsp"> <input type="submit" value="salir" /> </a>
                        </td>
                 </tr>
             </body>
