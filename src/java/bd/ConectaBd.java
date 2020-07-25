@@ -18,7 +18,7 @@ public class ConectaBd {
         }
         return cn;
     }
-    private final String url = "jdbc:mysql://localhost:3306/academico2";
+    private final String url = "jdbc:mysql://localhost:3306/academico";
     private final String driver = "com.mysql.jdbc.Driver";
     private final String user = "root";
     private final String password = "123";
