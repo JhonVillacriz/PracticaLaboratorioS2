@@ -38,11 +38,11 @@
                 s_idcurso = request.getParameter("f_idcurso");
                 // Primera parte del modificar
                 if (s_accion!=null && s_accion.equals("M1")) {
-                    consulta =  "   select codigo, nombre, horas, creditos, estado  "
+                    consulta =  "   sel ect codigo, nombre, horas, creditos, estado  "
                                 + " from curso  "
                                 + " where  "
                                 + " idcurso =  " + s_idcurso;
-                    //out.print(consulta);
+                   
                     pst = cn.prepareStatement(consulta);
                     rs = pst.executeQuery();
                     if (rs.next()) {
@@ -95,7 +95,7 @@
                         }
                 }else{
                 // Si no se hace la primera parte del modidicar debe mostrar el 
-                // formulario de agregar estudiante
+                // formulario de agregar curso
 
         %>
         <form name="AgregarCursoForm" action="DatosCurso.jsp" method="GET">
@@ -109,19 +109,19 @@
                 <tbody>
                     <tr>
                         <td>Codigo:</td>
-                        <td><input type="text" name="f_nombre" value="" maxlength="30" size="25" /></td>
+                        <td><input type="text" name="f_codigo" value="" maxlength="30" size="25" /></td>
                     </tr>
                     <tr>
                         <td>Nombre:</td>
-                        <td><input type="text" name="f_apellidos" value="" maxlength="40" size="25"/></td>
+                        <td><input type="text" name="f_nombre" value="" maxlength="40" size="25"/></td>
                     </tr>
                     <tr>
                         <td>Horas: </td>
-                        <td><input type="text" name="f_dni" value=""maxlength="8" size="8" /></td>
+                        <td><input type="text" name="f_horas" value=""maxlength="8" size="8" /></td>
                     </tr>
                     <tr>
                         <td>Creditos: </td>
-                        <td><input type="text" name="f_codigo" value="" maxlength="12" size="15" /></td>
+                        <td><input type="text" name="f_creditos" value="" maxlength="12" size="15" /></td>
                     </tr>
                     <tr>
                         <td>Estado: </td>
@@ -168,16 +168,16 @@
                 
                 if (s_accion !=null) {
                     
-                    // Ejecutar la eliminación de estudiantes
+                    // Ejecutar la eliminación de cursos
                     if (s_accion.equals("E")) {
                             consulta =    " delete from curso "
                                         + " where  "
                                         + " idcurso = " + s_idcurso +"; ";
-                            out.print(consulta);
+                            
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
-                    // Sino se elimina registros de estudiantes, 
-                    // Pregunta si se va a REGISTRAR UN NUEVO ESTUDIANTE
+                    // Sino se elimina registros de CURSO, 
+                    // Pregunta si se va a REGISTRAR UN NUEVO CURSO
                     }else if(s_accion.equals("C")){
                             s_codigo = request.getParameter("f_codigo");
                             s_nombre = request.getParameter("f_nombre");
@@ -188,11 +188,11 @@
                             consulta =    " insert into "
                                         + " curso (codigo, nombre, horas, creditos, estado)"
                                         + " values('"+ s_codigo +"','"+ s_nombre +"','"+ s_horas +"','"+ s_creditos +"','"+s_estado+"');  ";
-                            //out.print(consulta);
+                            
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
-                    // Si no se está creando o eliminando registro de estudiante
-                    // Pregunta si va a hacer la MODIFICACIÓN DE ESTUDIANTES - Parte 2
+                    // Si no se está creando o eliminando registro de curso
+                    // Pregunta si va a hacer la MODIFICACIÓN DE CURSO
                     }else if (s_accion.equals("M2")) {
                             s_codigo = request.getParameter("f_codigo");
                             s_nombre = request.getParameter("f_nombre");
@@ -208,17 +208,17 @@
                                         + " estado = '" + s_estado + "'  "
                                         + " where  "
                                         + " idcurso = " + s_idcurso + "; ";
-                            //out.print(consulta);
+                            
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
                     }
                     
                 }
                 
-                // Listar los estudiantes de la TABLA ESTUDIANTE
+                // Listar los cursos de la tabla CURSO
                 consulta= " Select idcurso, codigo, nombre, horas, creditos, estado "
                         + " from curso ";
-                //out.print(consulta);
+               
                 pst = cn.prepareStatement(consulta);
                 rs = pst.executeQuery();
                 int num = 0;
@@ -241,7 +241,7 @@
                     </tr>                    
                     <%
                     }
-                    // Se cierra todas las conexiones
+                    
                     rs.close();
                     pst.close();
                     cn.close();
