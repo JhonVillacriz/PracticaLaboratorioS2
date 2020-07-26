@@ -1,8 +1,4 @@
-<%-- 
-    Document   : DatosCurso
-    Created on : 25-jul-2020, 12:32:24
-    Author     : Kevin
---%>
+
 
 <%@page import="java.sql.*" %>
 <%@page import="bd.*" %>
@@ -13,7 +9,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Datos Curso</title>
+        <h1><i class="titulo">Datos Curso</i></h1> 
         <link href="css/Estilosparatabla.css" rel="stylesheet" type="text/css"/>
+        
         <%!
             // Variables globales (Página)
             String consulta;
@@ -44,7 +42,7 @@
                                 + " from curso  "
                                 + " where  "
                                 + " idcurso =  " + s_idcurso;
-                    out.print(consulta);
+                    //out.print(consulta);
                     pst = cn.prepareStatement(consulta);
                     rs = pst.executeQuery();
                     if (rs.next()) {
@@ -52,7 +50,7 @@
                         
                     %>    
                 <form name="EditarCursoForm" action="DatosCurso.jsp" method="GET">
-                    <table border="0" align="center">
+                    <table border="0" align="center" class="azulino" style="margin: auto; display: table">
                         <thead>
                             <tr>
                                 <th colspan="2">Editar Curso</th>
@@ -90,7 +88,8 @@
                         </tbody>
                     </table>
                 </form>
-                 
+                 <br>
+                <br>
                     
                     <%
                         }
@@ -100,7 +99,7 @@
 
         %>
         <form name="AgregarCursoForm" action="DatosCurso.jsp" method="GET">
-            <table border="0" align="center" class="ecologico" style="margin: auto; display: table">
+            <table border="0" align="center" class="azulino" style="margin: auto; display: table">
                 <thead>
                     <tr>
                         <th colspan="2">Agregar Curso</th>
@@ -142,8 +141,9 @@
         <%
             }
         %>
-        
-        <table border="1" cellpadding ="2" align = "center" class="ecologico" style="margin: auto; display: table" >
+        <br>
+        <br>
+        <table border="2" align="center" class="azulino" style="margin: auto; display: table" >
             <thead>
                 <tr>
                     <th colspan="8">
@@ -188,7 +188,7 @@
                             consulta =    " insert into "
                                         + " curso (codigo, nombre, horas, creditos, estado)"
                                         + " values('"+ s_codigo +"','"+ s_nombre +"','"+ s_horas +"','"+ s_creditos +"','"+s_estado+"');  ";
-                            out.print(consulta);
+                            //out.print(consulta);
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
                     // Si no se está creando o eliminando registro de estudiante
@@ -208,7 +208,7 @@
                                         + " estado = '" + s_estado + "'  "
                                         + " where  "
                                         + " idcurso = " + s_idcurso + "; ";
-                            out.print(consulta);
+                            //out.print(consulta);
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
                     }
@@ -218,7 +218,7 @@
                 // Listar los estudiantes de la TABLA ESTUDIANTE
                 consulta= " Select idcurso, codigo, nombre, horas, creditos, estado "
                         + " from curso ";
-                out.print(consulta);
+                //out.print(consulta);
                 pst = cn.prepareStatement(consulta);
                 rs = pst.executeQuery();
                 int num = 0;
@@ -227,6 +227,7 @@
                     ide = rs.getString(1);
                     num++;
                     %>
+                    <tbody>
                     <tr>
                         <td><%out.print(num);%></td>
                         <td><%out.print(rs.getString(2));%></td>
@@ -234,8 +235,8 @@
                         <td><%out.print(rs.getString(4));%></td>
                         <td><%out.print(rs.getString(5));%></td>
                         <td><%out.print(rs.getString(6));%></td>
-                        <td><a href="DatosCurso.jsp?f_accion=E&f_idcurso=<%out.print(ide);%>">Eliminar</a></td>
-                        <td><a href="DatosCurso.jsp?f_accion=M1&f_idcurso=<%out.print(ide);%>">Editar</a></td>
+                        <td><a href="DatosCurso.jsp?f_accion=E&f_idcurso=<%out.print(ide);%>"><img src="img/eliminar_25x25.png"  /></a></td>
+                        <td><a href="DatosCurso.jsp?f_accion=M1&f_idcurso=<%out.print(ide);%>"><img src="img/editar_25x25.png"  /></a></td>
                         
                     </tr>                    
                     <%
@@ -249,6 +250,12 @@
             }
         
         %>
+        <tr align="center">
+                <td colspan="8"><a href="menu.jsp"> <input type="submit" value="Menú" /> </a>
+                       </td>
+                </tr>
+            
+            </tbody>
         </table>
     </body>
 </html>

@@ -17,7 +17,7 @@
             </thead>
             <tbody>
                 <tr><td><a href="datosestudiante.jsp">Datos de estudiante</a></td> </tr>
-              
+                <tr><td><a href="DatosCurso.jsp">Datos de curso</a></td> </tr>            
                 
                <tr align="center">
                 <td><a href="salida.jsp"> <input type="submit" value="salir" /> </a>

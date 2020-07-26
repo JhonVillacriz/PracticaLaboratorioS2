@@ -18,17 +18,17 @@ table.general td, table.general th {
 table.general thead td , table.general thead th,
 table.general tfoot td, table.general tfoot th{
     font-weight: bold;
-    background-color: #4472C4;
+    background: #4472C4;
     color: #FFFFFF;
 }
 table.general tr:nth-of-type(odd) {
-    background-color: #D9E1F2;
+    background: #D9E1F2;
 }
 table.general tr:nth-of-type(even){
-    background-color: #FFFFFF;
+    background: #FFFFFF;
 }
 table.general tbody tr:hover {
-    background-color: #FFFF00;
+    background: #FFFF00;
 }
 /*
 Estilo ecológico para tablas: basado en el verde
@@ -44,17 +44,17 @@ table.ecologico td, table.ecologico th {
 table.ecologico thead td, table.ecologico thead th,
 table.ecologico tfoot td, table.ecologico tfoot th{
     font-weight: bold;
-    background-color: #70AD47;
+    background: #FFFFFF;
     color: #FFFFFF;
 }
 table.ecologico tr:nth-of-type(odd) {
-    background-color: #E2EFDA;
+    background: #FFFFFF;
 }
 table.ecologico tr:nth-of-type(even){
-    background-color: #FFFFFF;
+    background: #FFFFFF;
 }
 table.ecologico tbody tr:hover {
-    background-color: #FFFF00;
+    background: #FFFFFF;
 }
 
 
@@ -68,15 +68,23 @@ table.azulino td, table.azulino  th {
 table.azulino  thead td, table.azulino  thead th,
 table.azulino  tfoot td, table.azulino  tfoot th{
     font-weight: bold;
-    background-color: #3396F9;
+    background: #3396F9;
     color: #FFFFFF;
 }
 table.azulino o tr:nth-of-type(odd) {
-    background-color: #80EAFE;
+    background: #FFFFFF;
 }
-table.azulino  tr:nth-of-type(even){
-    background-color: #FFFFFF;
+table.azulino  tr{
+    background: #FFFFFF;
 }
 table.azulino  tbody tr:hover {
-    background-color: #99D9EA;
+    background: #99D9EA;   
+}
+
+body{
+    background-image: url(../img/untels.png);
+    
+}
+h1 i{
+    color: #FFFFFF;
 }
