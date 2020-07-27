@@ -18,7 +18,8 @@
             <tbody>
                 <tr><td><center><input type="button" value="Datos Estudiante" onclick="location.href='datosestudiante.jsp'" /></td> </tr>
                 <tr><td><center><input type="button" value="Datos Curso" onclick="location.href='DatosCurso.jsp'" /></td> </tr>            
-                <tr><td><center><input type="button" value="Datos Carrera" onclick="location.href='DatosCarrera.jsp'" /></td> </tr>    
+                <tr><td><center><input type="button" value="Datos Carrera" onclick="location.href='DatosCarrera.jsp'" /></td> </tr> 
+                <tr><td><center><input type="button" value="Datos Matrícula" onclick="location.href='DatosMatricula.jsp'" /></td> </tr> 
                <tr align="center">
                 <td><a href="salida.jsp"> <input type="submit" value="salir" /> </a>
                        </td>
